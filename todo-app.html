@@ -100,6 +100,31 @@
 const taskInput = document.getElementById('task-input');
 const addTaskButton = document.getElementById('add-task-btn');
 const taskList = document.getElementById('task-list');
-    </script>
+  
+// Add task to the list
+addTaskButton.addEventListener('click', function() {
+    const taskText = taskInput.value.trim();
+    if (taskText) {
+        const taskItem = document.createElement('li');
+        taskItem.classList.add('task');
+        taskItem.innerHTML = `
+            <span class="task-text">${taskText}</span>
+            <button class="delete-btn">Delete</button>
+        `;
+        taskList.appendChild(taskItem);
+
+        // Clear the input field
+        taskInput.value = '';
+    }
+});
+
+
+
+
+
+
+
+
+</script>
 </body>
 </html>
